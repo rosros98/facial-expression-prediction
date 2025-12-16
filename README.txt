@@ -3,6 +3,8 @@
 This project focuses on the **regression and classification of facial expressions** using Machine Learning techniques and facial landmark extraction.  
 The goal is to predict the **predominant emotion displayed on a person’s face** by analyzing both **macro-expressions** and **micro-expressions**.
 
+---
+
 ## Project Overview
 
 The system uses the **MediaPipe Face Mesh** framework to extract **468 3D facial landmarks** for each detected face.  
@@ -10,20 +12,25 @@ From these landmarks, **local and global Euclidean distances** are computed to m
 
 These features are then used to train and evaluate multiple **Machine Learning algorithms** for emotion prediction, both in classification and regression settings.
 
+---
+
 ## Technologies & Tools
 
-- **Language:** Python
+- **Language:** Python  
 - **Libraries:**
   - MediaPipe (facial landmark extraction)
   - pandas (data manipulation and preprocessing)
   - numpy
   - scikit-learn (machine learning algorithms)
-- **ML Algorithms:**
+
+- **Machine Learning Algorithms:**
   - Decision Tree
   - Random Forest
   - K-Nearest Neighbors (KNN)
   - Support Vector Classifier (SVC)
   - Gaussian Naive Bayes
+
+---
 
 ## Facial Landmark Extraction & Feature Engineering
 
@@ -31,19 +38,24 @@ These features are then used to train and evaluate multiple **Machine Learning a
 - Landmarks are used to compute:
   - **Global Euclidean distances** (macro-expressions)
   - **Local Euclidean distances** (micro-expressions)
-- These distances define the feature space used for training the models
+- These distances define the feature space used to train the models
+
+---
 
 ## Dataset Information
 
 The folder **`Dataset CK+`** already contains the datasets required for both:
+
 - the **classifier**
 - the **regressor**
 
-Therefore, it is possible to **run the code directly starting from step 12**, without regenerating the entire dataset pipeline.
+This means the project can be executed **directly starting from step 12**, without regenerating the entire dataset pipeline.
+
+---
 
 ## Code Execution Order
 
-To generate the complete dataset and train the models from scratch, the scripts should be executed in the following order:
+To generate the full dataset and train the models from scratch, execute the scripts in the following order:
 
 1. `landmarks_csv`  
 2. `distances_csv`  
@@ -57,28 +69,30 @@ To generate the complete dataset and train the models from scratch, the scripts 
 10. `concatCsv_*` (8 files)  
 11. `concatCsv_*_specific` (6 files)  
 12. `testing_classifier`  
-13. `testing_regressor`  
+13. `testing_regressor`
+
+---
 
 ## Fast Testing Mode
 
-To quickly test the system, the scripts:
+For quick testing, the scripts:
+
 - `testing_classifier`
 - `testing_regressor`
 
 allow **manual insertion** of:
-- image name
-- frame number
+
+- image name  
+- frame number  
 - emotion label (only for the regressor)
 
 This enables rapid testing without rebuilding the full pipeline.
 
 ### User Input vs Hardcoded Testing
 
-- The code for **user input** is already implemented but **commented out**
-- For testing purposes, parameters can be hardcoded directly in the scripts
+- User input handling is already implemented but **commented out**
+- For faster experimentation, values can be hardcoded directly
 
 Specifically:
 - In `testing_classifier`, user input code is commented from **line 7 to line 9**
 - In `testing_regressor`, user input code is commented from **line 11 to line 14**
-
-Ideally, these values should be provided by the user, but hardcoding allows faster experimentation.
