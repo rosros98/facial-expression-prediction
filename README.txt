@@ -24,7 +24,6 @@ These features are then used to train and evaluate multiple **Machine Learning a
   - K-Nearest Neighbors (KNN)
   - Support Vector Classifier (SVC)
   - Gaussian Naive Bayes
-  - And more...
 
 ## Facial Landmark Extraction & Feature Engineering
 
@@ -36,7 +35,10 @@ These features are then used to train and evaluate multiple **Machine Learning a
 
 ## Dataset Information
 
-The folder **`Dataset CK+`** already contains the datasets required for both the **classifier** and **regressor**.
+The folder **`Dataset CK+`** already contains the datasets required for both:
+- the **classifier**
+- the **regressor**
+
 Therefore, it is possible to **run the code directly starting from step 12**, without regenerating the entire dataset pipeline.
 
 ## Code Execution Order
